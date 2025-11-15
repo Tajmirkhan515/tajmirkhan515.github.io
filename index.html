@@ -203,29 +203,35 @@ Currently, I am focusing on <span style="color:#9F2B68;">AI-driven Faceted Aggre
        <!-- News Item 0 --> 
 <!-- News Item: LeetCode 50 Days Badge -->
 <!-- News Item: LeetCode 50 Days Badge -->
-<!-- News Item: LeetCode 50 Days Badge -->
-<div class="news-item" id="newsItem" style="border: 1px solid #ccc; padding: 10px; margin: 10px; border-radius: 10px; width: 350px; cursor: grab;">
+<div class="news-item">
   <div class="row">
     <div class="col-md-2 col-sm-3">
       <span class="pro-title-news">November 2025:</span>
     </div>
     <div class="col-md-10 col-sm-9">
+
       <span class="pro-detail-news">
-        Earned the <strong>LeetCode 50 Days Badge 2025</strong> for solving problems consistently for 50+ days! 
-        <br><br>
-        <img src="assets/img/gallery/leetcode_50_daybadge.png" alt="LeetCode 50 Days Badge" style="max-width: 300px; border-radius: 10px;">
-        <br><br>
-        <!-- Button to open dialog -->
-        <button id="openDialogBtn">More Info</button>
+        Earned the <strong>LeetCode 50 Days Badge 2025</strong> for solving 
+        problems consistently for 50+ days!
       </span>
+
+      <!-- Dropdown Toggle -->
+      <div style="margin-top: 10px;">
+        <a href="#" onclick="toggleDropdown(); return false;" 
+           style="color:#9F2B68; font-weight:600; cursor:pointer;">
+          View Badge ▼
+        </a>
+      </div>
+
+      <!-- Hidden dropdown content -->
+      <div id="badgeDropdown" style="display:none; margin-top:15px;">
+        <img src="assets/img/gallery/leetcode_50_daybadge.png"
+             alt="LeetCode 50 Days Badge"
+             style="max-width: 300px; border-radius: 10px;">
+      </div>
+
     </div>
   </div>
-
-  <!-- Dialog inside the same div -->
-  <dialog id="newsDialog" style="border-radius: 10px; padding: 15px;">
-    <p>Congratulations on completing 50+ days of coding streak! Keep up the great work.</p>
-    <button id="closeDialogBtn">Close</button>
-  </dialog>
 </div>
 
 
@@ -729,27 +735,14 @@ Currently, I am focusing on <span style="color:#9F2B68;">AI-driven Faceted Aggre
     <script src="assets/js/contact-form-script.min.js"></script>
     <script src="assets/js/map.js"></script>
     
-    <!-- this code is for dialog of news -->
-    <script>
- 
-
-
-  // Dialog functionality
-  const dialog = document.getElementById('newsDialog');
-  document.getElementById('openDialogBtn').addEventListener('click', () => {
-    dialog.showModal();
-  });
-  document.getElementById('closeDialogBtn').addEventListener('click', () => {
-    dialog.close();
-  });
+   
+<script>
+function toggleDropdown() {
+  const content = document.getElementById("badgeDropdown");
+  content.style.display = content.style.display === "none" ? "block" : "none";
+}
 </script>
 
-<style>
-  /* Optional: Visual feedback while dragging */
-  .news-item:active {
-    opacity: 0.8;
-  }
-</style>
 
     
       </body>
